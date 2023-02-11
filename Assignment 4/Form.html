@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title>Feedback</title>
+  <style>
+    label {	float: left;
+			width: 150px;}
+      #container{
+          width: 700px;
+          margin: auto;
+          background-color: beige;
+      } 
+      main{
+          padding: 50px;
+      }
+	  	.dynamicCheckbox {
+				display: none;
+				}
+
+		.textArea {
+				display: none;
+				}
+	  	table {
+				width: 1300px;
+				margin: auto;
+				text-align: left;				
+				}
+
+		table, th, td { 
+				border: 1px solid;
+				}
+
+		.table-header {
+				text-align: center;
+				font-size: 24px;
+				}
+  </style>
+ </head>
+ <body>
+ <div id="container">
+	 
+	 <main>
+	 <h2>Feeback</h2>
+	 <h3>Love something? Hate something? Let us know!</h3>
+		 Note : Fields marked with an asterisk(*) are mandatory
+		 <br><br>
+		 <form method="post" >
+			<label>Title*:</label>
+			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
+			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+			<br><br>
+			<label for="firstName">First Name*:</label>
+			<input type="text" name="firstName" id="firstName" placeholder="First Name"
+				onblur="validateInput(this, 1, 'FName')" / required>	
+			<br>
+			<div id="errorMsgFName" style="display: none; color: red">
+				Invalid first name. Only text values allowed.
+			</div>
+			<br>
+			
+
+			<label for="lastName">Last Name*:</label>
+			<input type="text" name="lastName" id="lastName" placeholder="Last Name"
+				onblur="validateInput(this, 1, 'LName')"/ required>
+			<br>
+			<div id="errorMsgLName" style="display: none; color: red">
+				Invalid last name. Only text values allowed.
+			  </div>
+			<br>
+			
+
+			<label for="emailId">Email Id*:</label>
+			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com"
+				onblur="validateInput(this, 2)" / required>
+			<br>
+			<div id="errorMsgEmailId" style="display: none; color: red">
+				Invalid email id. Please enter valid & northeastern email id.
+			  </div>
+			<br>
+			
+
+			<label for="phoneNumber">Phone Number*:</label>
+			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx"
+				onblur="validateInput(this, 3)" / required>
+			<br>
+			<div id="errorMsgPhone" style="display: none; color: red">
+				Invalid phone number. Please enter 10 digits
+			  </div>
+			<br>
+
+			<label for="streetAddress1">Street Address 1*:</label>
+			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address"
+				onblur="validateInput(this, 5, 'SAddress1')" / required>
+			<br>
+			<div id="errorMsgSAddress1" style="display: none; color: red">
+				Street Address 1 Invalid. Please enter valid input.
+			  </div>
+			<br>
+
+			<label for="streetAddress2">Street Address 2:</label>
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address"
+				onblur="validateInput(this, 6, 'SAddress2')" />
+			<br>
+			<div id="errorMsgSAddress2" style="display: none; color: red">
+				Street Address 2 Invalid. Please enter valid input.
+			  </div>
+			<br>
+
+			<label for="city">City*:</label>
+			<input type="text" name="city" id="city" placeholder="city" onblur="validateInput(this, 1, 'city')" / required>
+			<br>
+			<div id="errorMsgcity" style="display: none; color: red">
+				Invalid city. Please enter valid city.
+			  </div>
+			<br>
+
+			<label for="state">State*:</label>
+			<input type="text" name="state" id="state" placeholder="state" onblur="validateInput(this, 1, 'state')" / required>
+			<br>
+			<div id="errorMsgstate" style="display: none; color: red">
+				Invalid state. Please enter valid city.
+			  </div>
+			<br>
+			
+            <label for="zipcode">ZipCode*:</label>
+			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" onblur="validateInput(this, 4)" / required>
+			<br>
+			<div id="errorMsgZipcode" style="display: none; color: red">
+				Invalid input for your Zipcode. 5 digits allowed.
+			  </div>
+			<br>
+             
+            <label for="zipcode">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" /> Facebook
+            <input type='checkbox' name="source" value="google" /> Google
+            <input type='checkbox' name="source" value="yelp" /> Yelp 
+			<br><br> 
+             
+			<label for="comments">Comments*:</label>
+			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25" required></textarea>
+			<br><br>
+			<!-- Extra block -->
+			<label for="rating">Rating*:</label>
+			<select name="rating" id="rating" onchange="{onChangeFunction()}" required>
+				<option value="" selected disabled hidden>Select Rating</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+			<br><br>
+			<div id="dynamicCheckbox" class="dynamicCheckbox" >
+				<br><br>
+			</div>		
+			<div id="textArea" class="textArea">
+				<br>
+				<label for="ratingComment">More Feedback*: </label>
+				<textarea name="ratingComment" id="ratingComment" cols="30" rows="10" required></textarea>
+				<br><br>
+			</div>			
+			<!-- End Block -->
+			<input type="Submit">
+			<input type="Reset">
+			<br><br>
+		 </form>
+	 </main>
+ </div>
+
+ <br><br><br><br>
+ <div class="table-container">
+	<h2 class="table-header">Feedback Data:</h2><br><br>
+	<table id="tableData">
+		<tr>
+			<th>Name</th>
+			<th>Email ID</th>
+			<th>Phone Number</th>
+			<th>Street Address 1</th>
+			<th>Street Address 2</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Source</th>
+			<th>Comments</th>
+			<th>Rating Selected</th>
+			<th>Rating Comment</th>
+		</tr>
+	</table>
+	<br><br><br>
+ </div>
+ <script>
+  const form = document.querySelector("form");
+
+  const titles = document.querySelectorAll('input[name="title"]');
+  const firstName = document.getElementById("firstName");
+  const lastName = document.getElementById("lastName");
+  const emailId = document.getElementById("emailId");
+  const phoneNumber = document.getElementById("phoneNumber");
+  const streetAddress1 = document.getElementById("streetAddress1");
+  const streetAddress2 = document.getElementById("streetAddress2");
+  const city = document.getElementById("city");
+  const state = document.getElementById("state");
+  const zipcode = document.getElementById("zipcode");
+  const source = document.querySelectorAll('input[name="source"]');
+  const comments = document.getElementById("comments");
+  const ratingSelect = document.getElementById("rating");
+  const dynamicCheckbox = document.getElementById("dynamicCheckbox");
+  const textArea = document.getElementById("textArea");
+  const ratingComment = document.getElementById("ratingComment");
+
+  const submitBtn = document.getElementById("submitBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  let table = document.getElementById("tableData");
+  let validationBoolean = false;
+  let validationErrors = {};
+
+  form.addEventListener("submit", e => {
+      e.preventDefault();
+    
+      let title;
+    
+      for (let i=0; i<titles.length; i++) {
+        if (titles[i].checked) {
+          validationBoolean = true;
+          title = titles[i].value;
+        }
+      }
+
+        let myString = "";
+    
+        source.forEach(item => {
+          if (item.checked) {
+            myString += item.value + ", ";
+          }
+        })
+    
+        tableData.innerHTML += `
+          <tr>
+            <td>${title.charAt(0).toUpperCase() + title.slice(1)}. ${firstName.value} ${lastName.value}</td>
+            <td>${emailId.value}</td>
+            <td>${phoneNumber.value}</td>
+            <td>${streetAddress1.value}</td>
+            <td>${streetAddress2.value}</td>
+            <td>${city.value}</td>
+            <td>${state.value}</td>
+            <td>${zipcode.value}</td>
+            <td>${myString}</td>
+            <td>${comments.value}</td>
+            <td>${ratingSelect.value}</td>
+            <td>${ratingComment.value}</td>
+          </tr>
+        `;
+
+        alert("Details have been uploaded to the table!");
+        form.reset();
+        validationBoolean = false;
+    })
+
+  function validateInput(object, type, nameType) {
+        var regExName = /^[a-zA-Z]+$/;
+        var regExEmail = /([\w\.]+)@(northeastern.edu)/;
+        var regExPhone = /^\d{10}$/;
+        var regExZipcode = /^\d{5}$/;
+        var name = "errorMsg" + nameType;
+        var regExStreetAddress = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+        var regExStreetAddress2 = /^[a-zA-Z0-9\s,.'-]{3,}$|^$/;
+        var regExComment = /^[a-zA-Z0-9\s,.'-]{3,}$/;
+
+        switch (type) {
+          case 1:
+            if (!object.value.trim().match(regExName)) {
+              object.style.border = "2px solid red";
+              document.getElementById(name).style.display = "block";
+              object.value = "";
+            } else {
+              object.style.border = "";
+              document.getElementById(name).style.display = "none";
+            }
+            break;
+          case 2:
+            if (!object.value.match(regExEmail)) {
+              object.style.border = "2px solid red";
+              document.getElementById("errorMsgEmailId").style.display =
+                "block";
+              object.value = "";
+            } else {
+              object.style.border = "";
+              document.getElementById("errorMsgEmailId").style.display = "none";
+            }
+            break;
+          case 3:
+            if (!object.value.match(regExPhone)) {
+              object.style.border = "2px solid red";
+              document.getElementById("errorMsgPhone").style.display = "block";
+              object.value = "";
+            } else {
+              object.style.border = "";
+              document.getElementById("errorMsgPhone").style.display = "none";
+            }
+            break;
+          case 4:
+            if (!object.value.match(regExZipcode)) {
+              object.style.border = "2px solid red";
+              document.getElementById("errorMsgZipcode").style.display =
+                "block";
+              object.value = "";
+            } else {
+              object.style.border = "";
+              document.getElementById("errorMsgZipcode").style.display = "none";
+            }
+            break;
+
+            case 5:
+            if (!object.value.match(regExStreetAddress)) {
+              object.style.border = "2px solid red";
+              document.getElementById(name).style.display =
+                "block";
+              object.value = "";
+            } else {
+              object.style.border = "";
+              document.getElementById(name).style.display = "none";
+            }
+            break;
+
+            case 6:          
+            if (!object.value.match(regExStreetAddress2)) {
+
+              object.style.border = "2px solid red";
+              document.getElementById(name).style.display =
+                "block";
+              object.value = "";
+            } else {
+
+              object.style.border = "";
+              document.getElementById(name).style.display = "none";
+            }
+            break;
+
+            case 7:          
+            if (!object.value.match(regExComment)) {
+              
+              object.style.border = "2px solid red";
+              document.getElementById("errorMsgComment").style.display =
+                "block";
+              object.value = "";
+            } else {
+              
+              object.style.border = "";
+              document.getElementById("errorMsgComment").style.display = "none";
+            }
+            break;
+
+            case 8:
+            if (!object.value.trim().match(regExName)) {
+              object.style.border = "2px solid red";
+              document.getElementById(name).style.display = "block";
+              object.value = "";
+
+            } else {
+              object.style.border = "";
+              document.getElementById(name).style.display = "none";
+ 
+            }
+            break;
+
+        }
+      }
+
+      function onChangeFunction() {
+        if (ratingSelect.value == "5") {
+
+        dynamicCheckbox.style.display = "block";
+        textArea.style.display = "none";
+
+        dynamicCheckbox.innerHTML = `
+          <p>Thanks for the 5 rating, what did you like the most?</p>
+          <input id="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+          <input id="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+          <input id="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel
+          <br><br>
+        `;
+
+        const messageCheckbox1 = document.getElementById("messageCheckbox1");
+        const messageCheckbox2 = document.getElementById("messageCheckbox2");
+        const messageCheckbox3 = document.getElementById("messageCheckbox3");
+
+
+        messageCheckbox1.addEventListener("click", () => {
+
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value.length == 0) {  
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox2.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+              console.log(validatationBool);
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox3.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        } else if (ratingSelect.value == "4") {
+
+        dynamicCheckbox.style.display = "block";
+        textArea.style.display = "none";
+
+        dynamicCheckbox.innerHTML = `
+          <p>Thanks for the 4 rating, please share more details to make the product more viable!</p>
+          <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+          <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+          <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+          <br><br>
+        `;
+
+        const messageCheckbox1 = document.getElementById("messageCheckbox1");
+        const messageCheckbox2 = document.getElementById("messageCheckbox2");
+        const messageCheckbox3 = document.getElementById("messageCheckbox3");
+
+
+        messageCheckbox1.addEventListener("click", () => {
+
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox2.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox3.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        } else if (ratingSelect.value == "3") {
+
+        dynamicCheckbox.style.display = "block";
+
+        dynamicCheckbox.innerHTML = `
+          <p>Thanks for the 3 rating, what did you like or dislike the most?</p>
+          <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+          <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+          <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+          <br><br>
+        `;
+
+        const messageCheckbox1 = document.getElementById("messageCheckbox1");
+        const messageCheckbox2 = document.getElementById("messageCheckbox2");
+        const messageCheckbox3 = document.getElementById("messageCheckbox3");
+
+
+        messageCheckbox1.addEventListener("click", () => {
+
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox2.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox3.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        } else if (ratingSelect.value == "2") {
+
+        dynamicCheckbox.style.display = "block";
+        textArea.style.display = "none";
+
+        dynamicCheckbox.innerHTML = `
+          <p>Please provide us more feedback to serve you better!</p>
+          <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+          <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+          <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+          <br><br>
+        `;
+
+        const messageCheckbox1 = document.getElementById("messageCheckbox1");
+        const messageCheckbox2 = document.getElementById("messageCheckbox2");
+        const messageCheckbox3 = document.getElementById("messageCheckbox3");
+
+
+        messageCheckbox1.addEventListener("click", () => {
+
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox2.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox3.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        } else if (ratingSelect.value == "1") {
+
+        dynamicCheckbox.style.display = "block";
+        textArea.style.display = "none";
+
+        dynamicCheckbox.innerHTML = `
+          <p>We're sorry about it, what went wrong?</p>
+          <input id="messageCheckbox1" class="messageCheckbox1" type='checkbox' name="source" value="service" /> Service
+          <input id="messageCheckbox2" class="messageCheckbox2" type='checkbox' name="source" value="food" /> Food
+          <input id="messageCheckbox3" class="messageCheckbox3" type='checkbox' name="source" value="travel" /> Travel 
+          <br><br>
+        `;
+
+        const messageCheckbox1 = document.getElementById("messageCheckbox1");
+        const messageCheckbox2 = document.getElementById("messageCheckbox2");
+        const messageCheckbox3 = document.getElementById("messageCheckbox3");
+
+
+        messageCheckbox1.addEventListener("click", () => {
+
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+            if (ratingComment.value == "") {
+              validatationBool = false;
+            }
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox2.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        messageCheckbox3.addEventListener("click", () => {
+          if (messageCheckbox1.checked || messageCheckbox2.checked || messageCheckbox3.checked) {
+            textArea.style.display = "block";
+          } else {
+            textArea.style.display = "none";
+          }
+        })
+
+        } else {
+        dynamicCheckbox.style.display = "none";
+        textArea.style.display = "none";
+
+        dynamicCheckbox.innerHTML = "";
+        }
+      }
+ </script> 
+
+ <!-- <script src="./script.js" /> -->
+
+ </body>
+</html>
