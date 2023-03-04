@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="calculator.js"></script>
+	<style>
+	form div {  
+  	margin-bottom: 10px;  
+	}
+	form label {	float: left;
+			width: 150px;}
+      #container{
+		  padding: 100px;
+          margin: auto;
+          background-color: beige;
+      } 
+	  .error {
+		color: red;  
+  		margin-left: 5px; 
+	  }
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Calculator Login</h1>
+		<form id="login-form">
+		<div>
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email"><br>
+		</div>
+		<div>
+		<label for="username">User Name:</label>
+		<input type="text" id="username" name="username"><br>
+		</div>
+		<div>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password"><br>
+		</div>
+
+		<button type="submit" id="submit-btn">Submit</button>
+	</form>
+	<div id="error-message"></div>
+	</div>
+</body>
+</html>

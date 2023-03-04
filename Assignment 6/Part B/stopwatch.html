@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <style type="text/css">
+        body {
+            background: #000000;
+            color: #f6f6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .stopwatch {
+            font-size: 124px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #1157ff;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 5px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let timer = 0;
+        let interval;
+
+        const formatTime = timer => {
+            const hours = Math.floor(timer / 3600).toString().padStart(2, '0');
+            const minutes = Math.floor((timer % 3600) / 60).toString().padStart(2, '0');
+            const seconds = Math.floor(timer % 60).toString().padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        };
+
+        const startTimer = () => {
+            return new Promise((resolve, reject) => {
+                interval = setInterval(() => {
+                    timer++;
+                    $('#timer').text(formatTime(timer));
+                }, 1000);
+                resolve();
+            });
+        };
+
+        const stopTimer = () => {
+            clearInterval(interval);
+        };
+
+        const resetTimer = () => {
+            timer = 0;
+            $('#timer').text('00:00:00');
+        };
+
+        $(document).ready(() => {
+            $('#start').on('click', async () => {
+                await startTimer();
+            });
+
+            $('#stop').on('click', () => {
+                stopTimer();
+            });
+
+            $('#reset').on('click', () => {
+                resetTimer();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Stopwatch</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+    <label id="timer" class="stopwatch">00:00:00</label>
+</body>
+</html>

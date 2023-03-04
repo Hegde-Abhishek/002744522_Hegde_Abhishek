@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="calculator.js"></script>
+	<style>
+		label {	float: left;
+			width: 150px;}
+      .container{
+		  padding: 100px;
+          margin: auto;
+          background-color: beige;
+      } 
+	  #num1, #num2 {
+		margin-bottom: 20px;
+	  }
+	  button {
+		background-color: #4CAF50;
+		border: none;
+		border-radius: 10px;
+		color: white;
+		padding: 5px 15px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+	  }
+	  #error-message {
+		color: red;  
+  		margin-top: 5px; 
+	  }
+	</style>
+</head>
+<body>
+	<div class="container">
+	<h1>Welcome <span id="user"></span></h1>
+	<label for="num1">Number 1:</label>
+	<input type="text" id="num1"><br>
+
+	<label for="num2">Number 2:</label>
+	<input type="text" id="num2"><br>
+
+	<button type="button" id="add-btn">Add</button>
+	<button type="button" id="subtract-btn">Subtract</button>
+	<button type="button" id="multiply-btn">Multiply</button>
+	<button type="button" id="divide-btn">Divide</button>
+
+	<div style="margin-top: 20px;">
+		<label>Result:</label>
+		<span id="result"><input type="text"> </span>
+	</div>
+	<div id="error-message"></div>
+	</div>
+	
+</body>
+</html>
