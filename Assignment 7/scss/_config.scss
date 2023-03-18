@@ -1,0 +1,28 @@
+:root {
+    //custom properties
+    --first-color: #24252A;
+    --light-color: #ffffff;
+}
+
+// $light-color : #ffffff;
+$dark-color : #000000;
+$font-stack: "Lora", serif;
+// $first-color: #24252A;
+$background-color: linear-gradient(135deg, #71b7e6, #9b59b6);
+
+//mixin
+@mixin headfootcolor {
+    background-color: var(--first-color);
+    width: 100%;
+    padding: 8px 10%;
+}
+
+@mixin headingscolor {
+    color: var(--light-color);
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+@mixin set-background($color) {
+    
+}

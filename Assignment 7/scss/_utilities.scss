@@ -1,0 +1,171 @@
+@import 'config';
+%container {
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+%background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+  .image_container {
+    @extend %container;
+    width: 100%;
+  }
+  .about_container {
+    @extend %container;
+    position: fixed;
+    height: 100%;
+    background: $background-color;
+  }
+
+  .videos_section {
+    @extend %background;
+    background-image: url("/images/flight.jpg")
+  }
+  .hero-section {
+    @extend %background;
+    background-image: url("/images/bg.jpg");
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 50px;
+  
+    .container {
+      position: relative;
+      z-index: 5;
+    }
+  }
+  
+  .hero-text {
+    padding-top: 150px;
+  
+    h1 {
+      font-size: 60px;
+      line-height: 90px;
+      color: $dark-color;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+  
+    p {
+      font-size: 20px;
+      color: $dark-color;
+      line-height: 28px;
+      margin-bottom: 35px;
+    }
+  
+  }
+
+  .booking-form {
+    background: #ffffff;
+    padding: 40px 40px 40px 40px;
+    border-radius: 4px;
+
+    h3 {
+      color: $dark-color;
+    }
+
+    form .check-date {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    form .check-date label {
+      font-size: 14px;
+      color: $dark-color;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    form .check-date input {
+      width: 100%;
+      height: 50px;
+      border: 1px solid #ebebeb;
+      border-radius: 2px;
+      font-size: 16px;
+      color: #19191a;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding-left: 20px;
+    }
+
+    form .check-date i {
+      color: #dfa974;
+      position: absolute;
+      right: 18px;
+      bottom: 17px;
+    }
+
+    form .select-option {
+      margin-bottom: 15px;
+
+      label {
+        font-size: 14px;
+        color: #707079;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .nice-select {
+        border-radius: 2px;
+        border: 1px solid #ebebeb;
+        height: 50px;
+        line-height: 50px;
+        outline: none;
+        padding-left: 20px;
+        width: 100%;
+        float: none;
+      }
+
+      .nice-select:after {
+        border-bottom: 2px solid #dfa974;
+        border-right: 2px solid #dfa974;
+        height: 10px;
+        margin-top: 0;
+        right: 20px;
+        width: 10px;
+        top: 36%;
+      }
+
+      .nice-select span {
+        font-size: 16px;
+        color: #19191a;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .nice-select .list {
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+
+    // form button {
+    //   display: block;
+    //   font-size: 14px;
+    //   text-transform: uppercase;
+    //   border: 1px solid #dfa974;
+    //   border-radius: 2px;
+    //   color: #dfa974;
+    //   font-weight: 500;
+    //   background: transparent;
+    //   width: 100%;
+    //   height: 46px;
+    //   margin-top: 30px;
+    // }
+
+  }
+
+  .tn-left li {
+    list-style: none;
+    display: inline-block;
+    font-size: 16px;
+    color: var(--light-color);
+    font-weight: 500;
+    padding: 14px 0 12px;
+    margin-right: 64px;
+    position: relative;
+  }

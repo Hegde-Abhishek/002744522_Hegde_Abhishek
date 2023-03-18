@@ -1,0 +1,45 @@
+.card {
+    display: grid;
+    grid-template-columns: 250px;
+    grid-template-rows: 210px 210px;
+    grid-template-areas: "image" "text";
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0 0 0.9);
+    text-align: center;  
+    margin: 20px;
+  
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.2);
+  }
+
+%card-image {
+  grid-area: image;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+  
+  .card-image1 {
+    @extend %card-image;
+    background: url("/images/Bangalore.jpg");
+  }
+  
+  .card-image2 {
+    @extend %card-image;
+    background: url("/images/london.jpeg");
+  }
+  
+  .card-image3 {
+    @extend %card-image;
+    background: url("/images/las_vegas.jpeg");
+  }
+  
+  .card-text {
+    grid-area: text;
+    margin: 25px;
+  }

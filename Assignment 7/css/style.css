@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+:root {
+  --first-color: #24252A;
+  --light-color: #ffffff;
+}
+
+.primary-btn, .btn-search {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+.primary-btn:hover, .btn-search:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+.btn-search {
+  font-weight: 500;
+  background: transparent;
+  width: 100%;
+  height: 46px;
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid #dfa974;
+  border-radius: 2px;
+  color: #dfa974;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #71b7e6, #c4fb42);
+}
+
+:root {
+  --first-color: #24252A;
+  --light-color: #ffffff;
+}
+
+.about_container, .image_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section, .videos_section {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.image_container {
+  width: 100%;
+}
+
+.about_container {
+  position: fixed;
+  height: 100%;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.videos_section {
+  background-image: url("/images/flight.jpg");
+}
+
+.hero-section {
+  background-image: url("/images/bg.jpg");
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.hero-section .container {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-text {
+  padding-top: 150px;
+}
+.hero-text h1 {
+  font-size: 60px;
+  line-height: 90px;
+  color: #000000;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.hero-text p {
+  font-size: 20px;
+  color: #000000;
+  line-height: 28px;
+  margin-bottom: 35px;
+}
+
+.booking-form {
+  background: #ffffff;
+  padding: 40px 40px 40px 40px;
+  border-radius: 4px;
+}
+.booking-form h3 {
+  color: #000000;
+}
+.booking-form form .check-date {
+  position: relative;
+  margin-bottom: 15px;
+}
+.booking-form form .check-date label {
+  font-size: 14px;
+  color: #000000;
+  display: block;
+  margin-bottom: 10px;
+}
+.booking-form form .check-date input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-left: 20px;
+}
+.booking-form form .check-date i {
+  color: #dfa974;
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+}
+.booking-form form .select-option {
+  margin-bottom: 15px;
+}
+.booking-form form .select-option label {
+  font-size: 14px;
+  color: #707079;
+  display: block;
+  margin-bottom: 10px;
+}
+.booking-form form .select-option .nice-select {
+  border-radius: 2px;
+  border: 1px solid #ebebeb;
+  height: 50px;
+  line-height: 50px;
+  outline: none;
+  padding-left: 20px;
+  width: 100%;
+  float: none;
+}
+.booking-form form .select-option .nice-select:after {
+  border-bottom: 2px solid #dfa974;
+  border-right: 2px solid #dfa974;
+  height: 10px;
+  margin-top: 0;
+  right: 20px;
+  width: 10px;
+  top: 36%;
+}
+.booking-form form .select-option .nice-select span {
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.booking-form form .select-option .nice-select .list {
+  margin-top: 0;
+  width: 100%;
+}
+
+.tn-left li {
+  list-style: none;
+  display: inline-block;
+  font-size: 16px;
+  color: var(--light-color);
+  font-weight: 500;
+  padding: 14px 0 12px;
+  margin-right: 64px;
+  position: relative;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 250px;
+  grid-template-rows: 210px 210px;
+  grid-template-areas: "image" "text";
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgb(0, 0, 1);
+  text-align: center;
+  margin: 20px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+.card-image3, .card-image2, .card-image1 {
+  grid-area: image;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+
+.card-image1 {
+  background: url("/images/Bangalore.jpg");
+}
+
+.card-image2 {
+  background: url("/images/london.jpeg");
+}
+
+.card-image3 {
+  background: url("/images/las_vegas.jpeg");
+}
+
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lora", serif;
+}
+
+section {
+  padding: 15px 10%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--first-color);
+  width: 100%;
+  padding: 8px 10%;
+}
+header li, header a {
+  font-weight: 500;
+  font-size: 17px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+header .nav_links {
+  list-style: none;
+}
+header .nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+header .nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+header .nav_links li a:hover {
+  color: orange;
+}
+
+body {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+h1 {
+  cursor: pointer;
+  color: #01cdff;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 38px;
+  color: var(--light-color);
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  color: var(--light-color);
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+h6 {
+  font-size: 12px;
+  color: var(--light-color);
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  padding-bottom: 10px;
+}
+
+.divider {
+  position: relative;
+  margin-top: 0px;
+  height: 1px;
+}
+
+.div-transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+}
+
+footer {
+  bottom: 0;
+  background-color: var(--first-color);
+  width: 100%;
+  padding: 8px 10%;
+}
+
+input, select {
+  height: 45px;
+  width: 150px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.div-arrow-down:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -7px;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  transform: rotate(45deg);
+  background-color: white;
+  border-bottom: 1px solid rgb(48, 49, 51);
+  border-right: 1px solid rgb(48, 49, 51);
+}
+
+.video_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+}
+
+video {
+  margin: 20px;
+  height: 300px;
+  width: 450px;
+}
+
+.video {
+  display: inline;
+}
+
+audio {
+  margin: 10px;
+}
+
+.about_audio_container {
+  display: flex;
+}
+
+.about_section {
+  padding: 100px 320px;
+  max-height: 100%;
+}
+
+.about_skyscanner {
+  font-weight: 500;
+  font-size: 17px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.footer {
+  position: fixed;
+}/*# sourceMappingURL=style.css.map */
