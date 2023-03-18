@@ -1,3 +1,4 @@
+@import 'config';
 %btn {
     margin-top: 20px;
     padding: 15px;
@@ -25,4 +26,9 @@
   .primary-btn {
     @extend %btn;
     background: linear-gradient(135deg, #71b7e6, #c4fb42);
+    
+    a{
+      color: var(--light-color);
+      text-decoration: none;
+    }
   }

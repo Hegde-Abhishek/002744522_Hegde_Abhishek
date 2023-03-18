@@ -4,6 +4,11 @@
   --light-color: #ffffff;
 }
 
+:root {
+  --first-color: #24252A;
+  --light-color: #ffffff;
+}
+
 .primary-btn, .btn-search {
   margin-top: 20px;
   padding: 15px;
@@ -28,6 +33,10 @@
 
 .primary-btn {
   background: linear-gradient(135deg, #71b7e6, #c4fb42);
+}
+.primary-btn a {
+  color: var(--light-color);
+  text-decoration: none;
 }
 
 :root {
@@ -54,7 +63,7 @@
 .about_container {
   position: fixed;
   height: 100%;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: #9b59b6;
 }
 
 .videos_section {
@@ -180,7 +189,7 @@
   grid-template-rows: 210px 210px;
   grid-template-areas: "image" "text";
   border-radius: 18px;
-  background: white;
+  background: rgb(24, 24, 24);
   box-shadow: 5px 5px 15px rgb(0, 0, 1);
   text-align: center;
   margin: 20px;
@@ -256,7 +265,8 @@ header .nav_links li a:hover {
 }
 
 body {
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background-color: #9b59b6;
+  color: #ffffff;
 }
 
 h1 {
@@ -365,11 +375,12 @@ audio {
 }
 
 .about_section {
-  padding: 100px 320px;
+  padding: 100px 220px;
   max-height: 100%;
+  margin-top: -100px;
 }
 
-.about_skyscanner {
+.about_bostonairways {
   font-weight: 500;
   font-size: 17px;
   color: #edf0f1;

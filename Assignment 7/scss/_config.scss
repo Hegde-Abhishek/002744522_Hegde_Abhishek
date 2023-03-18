@@ -8,7 +8,7 @@
 $dark-color : #000000;
 $font-stack: "Lora", serif;
 // $first-color: #24252A;
-$background-color: linear-gradient(135deg, #71b7e6, #9b59b6);
+$background-color: #9b59b6;
 
 //mixin
 @mixin headfootcolor {
@@ -24,5 +24,15 @@ $background-color: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 @mixin set-background($color) {
-    
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+@function set-text-color($color) {
+    @if(lightness($color)>70){
+        @return #252525;
+    }
+    @else {
+        @return #ffffff;
+    }
 }
