@@ -1,0 +1,38 @@
+.container {
+    margin: auto;
+    max-width: 800px;
+    padding: 20px;
+    }
+    
+    .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    }
+    
+    .input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    }
+    
+    .weather-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    background-color: bisque;
+
+    }
+    
+    @media (max-width: 768px) {
+    .weather-container {
+    grid-template-columns: repeat
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.792);
+        transition: 0.3s;
+        border-radius: 10px;
+        background-color: rgb(250, 121, 242);
+      }
+}
